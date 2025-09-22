@@ -1,0 +1,15 @@
+Go 명령어
+go version 
+go mode init 파일명/폴더명(프로젝트 폴더 이름)
+go run 파일명.go
+go build 파일명.go(배포할 수 있는 독립적인 파일 생성)
+
+리눅스 명령어
+cp 원본파일 복사본 파일
+
+
+깃 명령어
+git reset만 하면 방금 한 add 취소
+
+기타
+.gitignore 파일 생성 (*.exe)
