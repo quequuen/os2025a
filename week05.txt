@@ -10,6 +10,11 @@ cp 원본파일 복사본 파일
 
 깃 명령어
 git reset만 하면 방금 한 add 취소
+git merge 브랜치명
+
 
 기타
 .gitignore 파일 생성 (*.exe)
+
+go 문법
+package, import, func, println, printf, {}, ;x
