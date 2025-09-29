@@ -40,7 +40,7 @@ func main(){
 		fmt.Println(b, reflect.TypeOf(b))
 	}
 	{
-		//Naming rules
+		// Naming rules
 		
 		// 1. 숫자로 시작할 수 없다. (영어로 시작해야만 함.)
 		// var 64f float64
