@@ -2,12 +2,26 @@ package main
 
 import (
 	"fmt"
-	"math"
-	"strings"
+	"reflect"
+	// "math"
+	// "strings"
 )
 
 func main(){
-	fmt.Println(math.Floor(3.14));
-	fmt.Println(strings.Title("head first go"));
-	fmt.Println(math.Round(2.31));
+	name:="Kim Inha"
+	// ':='는 선언할 때 쓰는 거기 때문에 재할당 용도로는 쓰지 못함.
+	// 이것도 할당임
+
+	// var name string
+	// name = "Kim Inha"
+	// 명확하게 타입을 알려주는 방식
+
+	// var name = "Kim Inha"
+	// 타입 추론 방식
+	fmt.Println(name, reflect.TypeOf(name))
+
+
+	// fmt.Println(math.Floor(3.14));
+	// fmt.Println(strings.Title("head first go"));
+	// fmt.Println(math.Round(2.31));
 }
