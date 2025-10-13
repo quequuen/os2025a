@@ -3,6 +3,7 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"log"
 	"os"
 	"reflect"
 	"strings"
@@ -54,7 +55,18 @@ func main() {
 		//go에 함수는 return 길이에 한정이 없음
 
 		r:= bufio.NewReader(os.Stdin)
-		i, _:= r.ReadString('\n') //ignore error
+		i, err := r.ReadString('\n') //ignore error
+		//문법 상으로는 맨 아래에 있지만 Fatal로 인해 사용 전에 프로그램이 종료되어 never used error 뜸
+		fmt.Println(err)
+		// nil이 뜨면 에러가 없다는 뜻
+		log.Fatal(err) //report error and exit program
 		fmt.Println("Input was", i)
+
+		// log 패키지도 있음. 
+		// log 패키지 중 Fatal은 에러 메세지를 출력하고 프로그램 종료
+
+		
 	}
+
+	
 }
