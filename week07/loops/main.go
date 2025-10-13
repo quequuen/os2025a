@@ -1,7 +1,9 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
+	"os"
 	"reflect"
 	"strings"
 	"time"
@@ -46,5 +48,13 @@ func main() {
 	changed:= changer.Replace(univ)
 	fmt.Println(changed)
 	fmt.Println(univ) //원본은 바뀌지 않음
+
+	}
+	{
+		//go에 함수는 return 길이에 한정이 없음
+
+		r:= bufio.NewReader(os.Stdin)
+		i, _:= r.ReadString('\n') //ignore error
+		fmt.Println("Input was", i)
 	}
 }
