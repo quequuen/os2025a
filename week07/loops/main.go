@@ -6,6 +6,7 @@ import (
 	"log"
 	"os"
 	"reflect"
+	"strconv"
 	"strings"
 	"time"
 )
@@ -59,6 +60,9 @@ func main() {
 		//문법 상으로는 맨 아래에 있지만 Fatal로 인해 사용 전에 프로그램이 종료되어 never used error 뜸
 		fmt.Println(err)
 		// nil이 뜨면 에러가 없다는 뜻
+		if err != nil{	// if err exists
+			log.Fatal(err)
+		}
 		log.Fatal(err) //report error and exit program
 		fmt.Println("Input was", i)
 
@@ -66,6 +70,23 @@ func main() {
 		// log 패키지 중 Fatal은 에러 메세지를 출력하고 프로그램 종료
 
 		
+	}
+	{
+		ipt := bufio.NewReader(os.Stdin)
+		iptstr, err := ipt.ReadString('\n')
+		if err != nil{
+			log.Fatal(err)
+		}
+		iptstr = strings.TrimSpace(iptstr) //개행 문자 제거
+		score, err := strconv.Atoi(iptstr) //string -> int 형 변환
+
+		if score >= 60 {
+			fmt.Println("Pass")
+		} else {
+			fmt.Println("Fail")
+		}
+		fmt.Println("Input was", iptstr)
+
 	}
 
 	
