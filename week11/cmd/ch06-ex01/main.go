@@ -29,5 +29,9 @@ func main(){
 	
 	fmt.Println(array3)
 	fmt.Println(arraySlice)
+
+	// go의 append는 메소드가 아닌 내장 함수로 동작함.
+	arraySlice = append(arraySlice, "GoLang")
+	fmt.Println(arraySlice)
 	
 }
