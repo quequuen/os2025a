@@ -12,23 +12,32 @@ func main(){
 	if err != nil{
 		log.Fatal(err)
 	}
-	var names []string
-	var counts []int
-	for _, line := range lines{
-		matched:=false
-		for i, name := range names{
-			if name == line {
-				counts[i]++
-				matched = true
-			}
-		}
-		if !matched{  // 처음 보는 이름이면
-			names = append(names, line)
-			counts = append(counts, 1)
-		}
-	}
+	// var names []string
+	// var counts []int
+	// for _, line := range lines{
+	// 	matched:=false
+	// 	for i, name := range names{
+	// 		if name == line {
+	// 			counts[i]++
+	// 			matched = true
+	// 		}
+	// 	}
+	// 	if !matched{  // 처음 보는 이름이면
+	// 		names = append(names, line)
+	// 		counts = append(counts, 1)
+	// 	}
+	// }
 
-	for i, name :=range names{
-		fmt.Println(name, ":", counts[i])
+	// for i, name :=range names{
+	// 	fmt.Println(name, ":", counts[i])
+	// }
+
+	// 맵을 이용한 구현
+	counts := make(map[string]int)
+	for _, line := range lines {
+		counts[line]++
+	}
+	for name, count := range counts {
+		fmt.Println("득표 수 : ",name, ":", count)
 	}
 }
