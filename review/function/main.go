@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"errors"
+	"fmt"
+	"log"
+)
 
 //return error 예제 함수
 // func double(number float64) float64{
@@ -25,6 +29,15 @@ func paintNeeded(width float64, height float64) float64{
 }
 
 func main(){
+
+	
+	
+
+	// 에러 생성과 반환
+	err := errors.New("height can't be negative")
+	fmt.Println(err.Error())
+	log.Fatal()
+	//에러를 출력하고 빠져나오는 메소드. 밑에 코드는 작동하지 못함
 
 	// 페인트 양 누적 및 계산 함수
 	var amount, total float64
