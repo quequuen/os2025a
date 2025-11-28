@@ -7,6 +7,11 @@ import (
 	"math"
 )
 
+func createPointer() *float64{
+	var myFloat = 98.5
+	return &myFloat
+}
+
 //다중 반환 예제2
 func floatParts(number float64)(integerPart int, fractionalPart float64){
 	// 이런 식으로 문서화를 위해 반환 값에 이름을 부여하는 것도 가능
@@ -47,7 +52,39 @@ func paintNeeded(width float64, height float64) (float64, error) {
 
 }
 
+func double(number *int){
+	// number는 인수의 주소를 받는 포인터변수 
+	*number *=2
+}
+
+func negative(myBoolean *bool){
+	*myBoolean = !*myBoolean
+
+	// myBoolean은 bool이 아니라 "bool의 주소"
+	// myBoolean → 포인터 자체
+	// *myBoolean → 그 포인터가 가리키는 실제 값
+	// 포인터 자체가 아닌 포인터가 가지는 실제 값을 반전시켜야 하기 때문에 이런 형태.
+}
+
 func main(){
+
+	truth := true
+	negative(&truth)
+	fmt.Println(truth)
+	lies := false
+	negative(&lies)
+	fmt.Println(lies)
+
+	pointAmount := 6
+	double(&pointAmount)
+	fmt.Println(pointAmount)
+
+
+
+	// 포인터 사용
+	var myFloatPointer *float64 = createPointer()
+	fmt.Println(*myFloatPointer)
+	// *로 포인터 주소의 값을 출력
 
 
 	//다중 반환 예제2
