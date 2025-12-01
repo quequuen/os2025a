@@ -15,6 +15,9 @@ type Pokemon interface {
 // 인터페이스는 메소드를 구현해야 한다.
 // 구조체는 데이터 묶음
 // 인터페이스는 행동(동작) 약속
+// Duck typing(덕타이핑): 오리와 같은 행동을 하게 되면 오리로 치는 느낌~
+// 고에서는 인터페이스로 구현할 수 있다
+// 고는 객체 지향 언어가 아니라서 struct + method + interface 이런 식으로 클래스를 구현함.
 
 // Charmander 구조체
 type Charmander struct {
@@ -22,7 +25,7 @@ type Charmander struct {
 }
 
 func (c Charmander) Name() string {
-	// 리시버 매개변수 존재 -> 메소드
+	// 리시버 매개변수 존재 = 메소드
 	return "리자드"
 }
 
