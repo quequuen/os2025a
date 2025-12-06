@@ -5,7 +5,26 @@ import (
 	"reflect"
 )
 
+func swap(first *int, second *int){
+	// int가 저장된 주소를 매개변수로 받음
+	temp := *first
+	*first = *second
+	*second = temp
+
+	fmt.Println(*first, *second)
+}
+
 func main(){
+
+	// & = “주소 줘”
+	// * = “값 줘”
+
+	a,b := 10, 20
+	fmt.Println(a,b)
+
+	swap(&a, &b)
+	fmt.Println(a, b)
+
 	// 포인터 기본 사용법
 	{
 		amount := 6

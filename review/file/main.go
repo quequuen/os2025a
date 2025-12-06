@@ -9,6 +9,8 @@ import (
 )
 
 func main(){
+	fmt.Printf("%4.2f \n", 1231.123123)
+
 	data, err := os.Open("./file/data.txt")
 	// 파일 열기(가져오기)
 	// cmd 실행경로를 기준으로 상대경로 작성(당시 경로: review)
