@@ -25,5 +25,4 @@ func main() {
 	fmt.Print(<-mbc)
 	fmt.Print(<-kbs)
 	fmt.Print(<-mbc)
-	fmt.Println()
 }
