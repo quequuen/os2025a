@@ -67,6 +67,13 @@ func negative(myBoolean *bool){
 }
 
 func main(){
+	//입력 값 받는 법!
+	// reader := bufio.NewReader(os.Stdin)
+	// input,err := reader.ReadString('\n')
+	// if err != nil{
+	// 	log.Fatal(err)
+	// }
+	// input = strings.TrimSpace(input) 
 
 	truth := true
 	negative(&truth)
