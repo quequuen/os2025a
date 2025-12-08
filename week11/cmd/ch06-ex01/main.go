@@ -31,9 +31,12 @@ func main(){
 	fmt.Println(arraySlice)
 
 	// go의 append는 메소드가 아닌 내장 함수로 동작함.
+	// 해당 append는 기존 배열의 용량을 벗어나기 때문에 참조가 아닌 복사로 동작함.
 	arraySlice = append(arraySlice, "GoLang", "Python", "Cotlin", "Git", "Database")
 	for _, v := range arraySlice{
 		fmt.Println(v)
 	}
+
+	fmt.Println("기존 배열:", array3)
 	
 }
